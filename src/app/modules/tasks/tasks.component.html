@@ -1,0 +1,55 @@
+<div class="container">
+  <app-side-board></app-side-board>
+  <div class="main">
+    <div class="top-buttons">
+      <div class="navigation-tabs">
+        <button>Tasks</button>
+        <button>Projects</button>
+        <button>Reports</button>
+      </div>
+      <button class="add" (click)="openModal()"><img src="assets/add.svg">Add Task</button>
+    </div>
+    <app-task-progress [all]="tasksNumber" [done]="doneTasks.length"></app-task-progress>
+    <div class="task-lists">
+      <div class="list todo">
+        <div class="list-header">
+          <div class="dot"></div>
+          <p>To Do</p>
+          <div class="tasks-number">
+            <p>{{toDoTasks.length}}</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="task-card-container">
+          <app-task-card *ngFor="let item of toDoTasks" [taskInfo]="item" [refresh]="refresh"></app-task-card>
+        </div>
+      </div>
+      <div class="list on-progress">
+        <div class="list-header">
+          <div class="dot"></div>
+          <p>On Progress</p>
+          <div class="tasks-number">
+            <p>{{onProgressTasks.length}}</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="task-card-container">
+          <app-task-card *ngFor="let item of onProgressTasks" [taskInfo]="item" [refresh]="refresh"></app-task-card>
+        </div>
+      </div>
+      <div class="list done">
+        <div class="list-header">
+          <div class="dot"></div>
+          <p>Done</p>
+          <div class="tasks-number">
+            <p>{{doneTasks.length}}</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="task-card-container">
+          <app-task-card *ngFor="let item of doneTasks" [taskInfo]="item" [refresh]="refresh"></app-task-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

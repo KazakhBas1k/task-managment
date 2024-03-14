@@ -1,0 +1,11 @@
+<div class="task-item">
+  <span class="project-name">{{taskInfo.projectName}}</span>
+  <div class="actions" (click)="edit()">...</div>
+  <p class="item-header">{{taskInfo.taskName}}</p>
+  <p class="item-content">{{taskInfo.description}}</p>
+  <div class="item-statuses">
+    <span [class]="taskInfo.priority">{{taskInfo.priority}}</span>
+    <span>{{date}}</span>
+    <span>{{taskInfo.timeFrom + ' - ' + taskInfo.timeTo}}</span>
+  </div>
+</div>

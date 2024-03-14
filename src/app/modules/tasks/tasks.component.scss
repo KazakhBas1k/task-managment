@@ -1,0 +1,112 @@
+@import "styles.scss";
+@import "assets/styles/colors.scss";
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+}
+
+
+
+.main {
+  width: calc(100% - 380px);
+  background: #F9F9F9;
+  padding: 20px;
+  .top-buttons {
+    display: flex;
+    justify-content: space-between;
+    .navigation-tabs {
+      background: $white;
+      border-radius: 4px;
+    }
+    .add {
+      background: $purple;
+      color: $white;
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+  .task-lists {
+    display: flex;
+    justify-content: space-between;
+    .list {
+      background: $white;
+      padding: 20px;
+      width: 330px;
+      height: 100%;
+      .list-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        p {
+          font-weight: 700;
+          font-size: 14.93px;
+          line-height: 18px;
+        }
+        .dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 100%;
+        }
+        .tasks-number {
+          background: #E0E0E0;
+          width: 18.66px;
+          height: 18.66px;
+          border-radius: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          p {
+            font-weight: 500;
+            font-size: 11.2px;
+            line-height: 14px;
+            color: #625F6D;
+          }
+        }
+      }
+      .line {
+        width: 100%;
+        height: 3px;
+        margin-top: 20px;
+        margin-bottom: 26px;
+      }
+      .task-card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+      }
+    }
+    .todo {
+      .list-header {
+        .dot {
+          background: $purple;
+        }
+      }
+      .line {
+        background: $purple;
+      }
+    }
+    .on-progress {
+      .list-header {
+        .dot {
+          background: #FFA500;
+        }
+      }
+      .line {
+        background: #FFA500;
+      }
+    }
+    .done {
+      .list-header {
+        .dot {
+          background: #8BC48A;
+        }
+      }
+      .line {
+        background: #8BC48A;
+      }
+    }
+  }
+}

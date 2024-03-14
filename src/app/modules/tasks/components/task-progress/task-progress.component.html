@@ -1,0 +1,19 @@
+<div class="task-progress">
+  <div class="progress-number">
+    <p>Task Meter <span>{{done}}</span>/{{all}}</p>
+    <div *ngIf="percentage < 33" class="rating">
+      <p class="bad">Try harder!</p>
+    </div>
+    <div *ngIf="percentage > 33 && percentage < 66" class="rating">
+      <p class="normal">Keep going!</p>
+    </div>
+    <div *ngIf="percentage > 66" class="rating">
+      <img src="./assets/star.svg">
+      <p class="good">Good Job!</p>
+    </div>
+  </div>
+  <div class="progress-bar">
+    <div class="all"></div>
+    <div class="in" [style]="{width: calc(270) + 'px'}"></div>
+  </div>
+</div>

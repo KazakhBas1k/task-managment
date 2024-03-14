@@ -1,0 +1,61 @@
+<div class="modal-container">
+  <p class="title">Edit Task</p>
+  <form [formGroup]="form">
+    <label>
+      Status
+      <select formControlName="status" customSelect>
+        <option value="To Do">ToDo</option>
+        <option value="On Progress">On Progress</option>
+        <option value="Done">Done</option>
+      </select>
+    </label>
+    <label>
+      Name the task
+      <input type="text" formControlName="taskName" placeholder="The name of the task">
+    </label>
+
+    <label class="description">
+      Description
+      <textarea formControlName="description" placeholder="Description of the task"></textarea>
+    </label>
+
+    <label class="project">
+      Choose project
+      <select formControlName="projectName" customSelect>
+        <option [value]="null" disabled selected hidden>Project name</option>
+        <option value="Komek">Komek</option>
+      </select>
+    </label>
+
+    <label class="priority">
+      Task Priority
+      <select formControlName="priority" customSelect>
+        <option [value]="null" disabled selected hidden>Priority</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </label>
+
+    <label class="date">
+      Due Date/Time
+      <input type="date" formControlName="taskDate" [min]="dateNow">
+    </label>
+
+    <label class="time">
+      <input type="time" formControlName="timeFrom">
+      <input type="time" formControlName="timeTo">
+    </label>
+
+    <label>
+      Task Assignee
+      <input type="text" formControlName="assigneeName" placeholder="Name Surname">
+    </label>
+
+    <div class="actions">
+      <button class="save-btn" (click)="save()">Save</button>
+      <button class="delete-btn" (click)="delete()">Delete Task</button>
+      <button class="close-btn" (click)="close('close')">Cancel</button>
+    </div>
+  </form>
+</div>

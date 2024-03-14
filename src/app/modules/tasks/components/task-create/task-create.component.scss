@@ -1,0 +1,76 @@
+@import "assets/styles/colors.scss";
+.modal-container {
+  width: 530px;
+  padding: 30px 30px 50px 40px ;
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .title {
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 44px;
+    }
+    .date {
+      color: $grey;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 20px;
+
+    .project, .priority, .date, .time {
+      width: calc(50% - 10px);
+    }
+
+    .description {
+      textarea {
+        resize: vertical;
+      }
+    }
+
+    .time {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: flex-end;
+      input {
+        width: 100px;
+        height: 60px;
+      }
+    }
+
+    .actions {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .save-btn {
+        background: $primary;
+        color: $white;
+      }
+
+      .close-btn {
+        color: $dark-blue;
+      }
+    }
+  }
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: $dark-blue
+}

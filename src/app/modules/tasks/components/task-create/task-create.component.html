@@ -1,0 +1,55 @@
+<div class="modal-container">
+  <div class="top">
+    <p class="title">Add Task</p>
+    <p class="date">Today {{dateNow.view}}</p>
+  </div>
+  <form [formGroup]="form">
+    <label>
+      Name the task
+      <input type="text" formControlName="taskName" placeholder="The name of the task">
+    </label>
+
+    <label class="description">
+      Description
+      <textarea formControlName="description" placeholder="Description of the task"></textarea>
+    </label>
+
+    <label class="project">
+      Choose project
+      <select formControlName="projectName" customSelect>
+        <option [value]="null" disabled selected hidden>Project name</option>
+        <option value="Komek">Komek</option>
+      </select>
+    </label>
+
+    <label class="priority">
+      Task Priority
+      <select formControlName="priority" customSelect>
+        <option [value]="null" disabled selected hidden>Priority</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </label>
+
+    <label class="date">
+      Due Date/Time
+      <input type="date" formControlName="taskDate" [min]="dateNow.input">
+    </label>
+
+    <label class="time">
+      <input type="time" formControlName="timeFrom">
+      <input type="time" formControlName="timeTo">
+    </label>
+
+    <label>
+      Task Assignee
+      <input type="text" formControlName="assigneeName" placeholder="Name Surname">
+    </label>
+
+    <div class="actions">
+      <button class="save-btn" (click)="save()">Save</button>
+      <button class="close-btn" (click)="close()">Cancel</button>
+    </div>
+  </form>
+</div>
